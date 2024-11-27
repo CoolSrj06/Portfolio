@@ -109,7 +109,7 @@ export const Works = () => {
                 </span>
               </div>
               <span className="mt-3 mx-2 pt-2 border-t border-[#0C0C0C] flex items-center justify-between">
-                <Link to="https://github.com/AnkitRaj256/code-whispers.git">
+                <Link to="https://github.com/CoolSrj06/YouTube-Time-Calculator-Extension.git">
                   <FaGithub className="text-lg" />
                 </Link>
               </span>
