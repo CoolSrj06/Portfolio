@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.socials-card {
+    @apply py-3 mt-6 bg-blue-100 text-[#0C0C0C] flex flex-col items-center rounded-md cursor-pointer space-y-1 shadow-md shadow-gray-200;
+}
+
+.socials-icon {
+    @apply text-lg md:text-xl;
+}
+
+.skills-container {
+    @apply bg-blue-100 rounded-md flex flex-col justify-center items-center p-4 shadow-md shadow-gray-200 cursor-pointer h-[136px];
+}
+
+.skills-text {
+    @apply text-[#0C0C0C] mt-2 font-semibold text-sm md:text-base;
+}
+
+.works-container {
+    @apply bg-blue-100 shadow shadow-[#C8CACD] flex flex-col justify-between rounded-md pb-4 cursor-pointer;
+}
+
+.works-pill {
+    @apply bg-blue-200 text-blue-800 border border-blue-400 px-2 py-1 rounded text-sm md:text-base;
+}
+
+.form-input {
+    @apply bg-white border text-[#0C0C0C] rounded p-1 md:p-2 outline-none;
+}
