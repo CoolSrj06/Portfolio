@@ -3,8 +3,30 @@ import React, { useEffect } from "react";
 
 export const Contact = () => {
   useEffect(() => {
+    // Initialize animations
     Aos.init({ duration: 1000, easing: "ease-in" });
-  });
+
+    // Dynamically load the HubSpot form script
+    const script = document.createElement("script");
+    script.src = "//js.hsforms.net/forms/embed/v2.js";
+    script.type = "text/javascript";
+
+    script.onload = () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          portalId: "48341809",
+          formId: "0569c51b-4e0f-491f-8885-438785c40bf5",
+          target: "#hubspotForm",
+        });
+      }
+    };
+    document.body.appendChild(script);
+
+    // Cleanup script
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <section className="pt-16" id="contact">
@@ -18,37 +40,11 @@ export const Contact = () => {
         <p className="ml-14 md:ml-20 mt-2 text-sm md:text-base" data-aos="fade-up">
           Send me a message💬
         </p>
-        <form
-          method="POST"
-          action="https://getform.io/f/9927400a-d3d7-4b85-821e-645a69375849"
+        <div
+          id="hubspotForm"
           className="flex flex-col container mx-auto w-[70%] md:w-[50%] space-y-5 py-6"
           data-aos="zoom-in"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            className="form-input"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="form-input"
-          />
-          <textarea
-            name="message"
-            cols="30"
-            rows="10"
-            placeholder="Message"
-            className="form-input"
-          ></textarea>
-          <div className="mx-auto pt-2">
-            <button className="bg-[#3366CC] ease-in-out duration-700 hover:bg-[#819096] text-white p-2 rounded w-36 md:w-48 mx-auto">
-              Submit
-            </button>
-          </div>
-        </form>
+        ></div>
       </div>
     </section>
   );
