@@ -37,7 +37,7 @@ export const About = () => {
             data-aos="zoom-in-left"
           >
             <a
-              href="https://drive.google.com/file/d/1FPrshLnbLpmpla5YjU32mMg4w6D37ytv/view?usp=sharing"
+              href="https://drive.google.com/file/d/13OanZeHDr5AiY4BNc4Wm608gZ1HJIFj6/view?usp=drive_link"
               className="flex mt-5 md:mt-0 text-base items-center space-x-2 bg-[#3366CC] ease-in-out duration-700 hover:bg-[#819096] text-white py-6 px-4 md:px-10 h-10 rounded shadow-md"
             >
               <p>View Resume </p>
