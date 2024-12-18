@@ -2,7 +2,7 @@ import Aos from "aos";
 import React, { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import "aos/dist/aos.css";
-
+import  animatedImage  from "../assets/portfolioGIF.gif"
 export const HomeSection = () => {
   useEffect(() => {
     Aos.init({
@@ -10,9 +10,6 @@ export const HomeSection = () => {
       easing: "ease-in",
     });
   });
-
-  const Animated_Image =
-    "https://media.licdn.com/dms/image/D5612AQGOmwfIE5mlWA/article-cover_image-shrink_720_1280/0/1674617947228?e=2147483647&v=beta&t=FTU_isQ6VYfV5D_ueFHPWvT8ZqgDeJG3yr8Mi8lpfk0";
 
   return (
     <section className="pt-12 md:pt-20" data-aos="fade-up" id='home'>
@@ -30,7 +27,7 @@ export const HomeSection = () => {
         </div>
         <div data-aos="fade-left" className="flex justify-center">
           <img
-            src={Animated_Image}
+            src={animatedImage}
             alt="animated-image"
             className="rounded-full h-72 md:h-96 object-contain shadow"
           />
