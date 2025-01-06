@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import UnitStorage from "../assets/UnitStorage.png";
 import CodeWhispers from "../assets/CodeWhispers.png";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaLink } from "react-icons/fa6";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
@@ -53,8 +53,11 @@ export const Works = () => {
                 </span>
               </div>
               <span className="mt-3 mx-2 pt-2 border-t border-[#0C0C0C] flex items-center justify-between">
-                <Link to="https://github.com/AnkitRaj256/code-whispers.git">
+                <Link to="https://github.com/CoolSrj06/code-whispers.git">
                   <FaGithub className="text-lg" />
+                </Link>
+                <Link to="https://code-whispers.onrender.com/api/v2/url/">
+                  <FaLink className="text-lg" />
                 </Link>
               </span>
             </div>
