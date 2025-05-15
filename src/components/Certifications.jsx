@@ -51,7 +51,7 @@ export const Certifications = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             handleNext();
-        }, 10000); // 10 seconds
+        }, 5000); // 5 seconds
 
         return () => clearInterval(timer);
     }, [currentIndex]);
