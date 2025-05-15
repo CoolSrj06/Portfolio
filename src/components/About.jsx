@@ -16,7 +16,7 @@ export const About = () => {
           className="inline border-b-2 border-[#C8CACD] font-bold text-lg md:text-xl mt-3 ml-14 md:ml-20"
           data-aos="fade-up"
         >
-          About
+          About Me
         </h1>
         <div
           className="flex-col md:flex md:flex-row items-center md:justify-between mx-14 md:mx-20 py-6"
@@ -37,7 +37,7 @@ export const About = () => {
             data-aos="zoom-in-left"
           >
             <a
-              href="https://drive.google.com/file/d/10HgIpTB0_R2ctfJehDn1u-UYRUK8thlZ/view?usp=drive_link"
+              href="https://github.com/CoolSrj06/Resume"
               className="flex mt-5 md:mt-0 text-base items-center space-x-2 bg-[#3366CC] ease-in-out duration-700 hover:bg-[#819096] text-white py-6 px-4 md:px-10 h-10 rounded shadow-md"
             >
               <p>View Resume </p>

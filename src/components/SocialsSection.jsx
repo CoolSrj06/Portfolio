@@ -12,7 +12,7 @@ export const SocialsSection = () => {
   });
 
   return (
-    <section className="mt-20 py-4" data-aos='fade-up'>
+    <section className="mt-20 py-4" data-aos='fade-up' id='social'>
       <h2 className="text-base md:text-lg ml-14 md:ml-20 font-semibold">Connect with me on:</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-x-10 md:gap-x-20 gap-y-2 md:gap-y-0 px-14 md:px-20">
         <a href='https://github.com/CoolSrj06' target="_blank" className="socials-card" data-aos="fade-right">

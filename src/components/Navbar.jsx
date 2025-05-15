@@ -35,8 +35,13 @@ export const Navbar = () => {
           </Link>
         </li>
         <li>
+          <Link smooth to={"#certifications"} className="hover:text-[#819096]">
+            Certifications
+          </Link>
+        </li>
+        <li>
           <Link smooth to={"#about"} className="hover:text-[#819096]">
-            About
+            About Me
           </Link>
         </li>
         <li>
@@ -76,8 +81,13 @@ export const Navbar = () => {
           </Link>
         </li>
         <li>
+          <Link smooth to={"#certifications"} className="hover:text-[#819096]">
+            Certifications
+          </Link>
+        </li>
+        <li>
           <Link smooth to={"#about"} className="hover:text-[#819096]">
-            About
+            About Me
           </Link>
         </li>
         <li>
