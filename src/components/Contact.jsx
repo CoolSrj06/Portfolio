@@ -10,7 +10,7 @@ import {
 
 // Replace with your actual Google Apps Script Web App URL after deploying it
 const GOOGLE_SCRIPT_URL =
-  "https://docs.google.com/spreadsheets/d/1G_cYOt83i0GCy4RlrioIrLvH8_GrYb53aF2gxtrTSwk/edit?gid=0#gid=0 ";
+  "https://script.google.com/macros/s/AKfycbymaS1tBL0cdKbVwR2Y-wKPZRNpovaMhcDoVMWmWjusKVgtR7FZRUR06wNBOeZ0LVf5/exec";
 
 const inputVariants = {
   focus: {
@@ -110,91 +110,58 @@ export const Contact = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.message
-    ) {
-      setSubmissionStatus("error");
-      setFormMessage("Please fill in all fields.");
-      setTimeout(() => {
-        // Reset after a few seconds
-        setSubmissionStatus("idle");
-        setFormMessage("");
-      }, 3000);
-      return;
-    }
-    if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      setSubmissionStatus("error");
-      setFormMessage("Please enter a valid email address.");
-      setTimeout(() => {
-        setSubmissionStatus("idle");
-        setFormMessage("");
-      }, 3000);
-      return;
-    }
+  e.preventDefault();
+  if (!formData.name || !formData.email || !formData.message) {
+    setSubmissionStatus("error");
+    setFormMessage("Please fill in all fields.");
+    setTimeout(() => {
+      setSubmissionStatus("idle");
+      setFormMessage("");
+    }, 3000);
+    return;
+  }
+  if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    setSubmissionStatus("error");
+    setFormMessage("Please enter a valid email address.");
+    setTimeout(() => {
+      setSubmissionStatus("idle");
+      setFormMessage("");
+    }, 3000);
+    return;
+  }
 
-    setSubmissionStatus("submitting");
-    setFormMessage("");
+  setSubmissionStatus("submitting");
+  setFormMessage("");
 
-    try {
-      const response = await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors", // Important for Google Apps Script when not returning custom JSON from doPost
-        // Or use 'cors' if your Apps Script is configured to return proper CORS headers and JSON response
-        headers: {
-          "Content-Type":
-            "application/x-www-form-urlencoded", // Or 'application/json' if Apps Script handles JSON
-        },
-        // body: new URLSearchParams(formData).toString(), // For x-www-form-urlencoded
-        // For direct POST to Apps Script, it often expects parameters directly.
-        // A common way is to send it as FormData, but Apps Script web apps
-        // receive POST parameters more directly (e.g. e.parameter.name)
-        // So, we construct a FormData object.
-        redirect: "follow", // Optional
-        body: (() => {
-          const fd = new FormData();
-          Object.entries(formData).forEach(
-            ([key, value]) => {
-              fd.append(key, value);
-            }
-          );
-          return fd;
-        })(),
-      });
+  try {
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors", // Or "cors" if your Apps Script supports it
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-      // Note: With 'no-cors', you won't be able to read the response body directly.
-      // The request will be made, and if it doesn't throw an error,
-      // we assume it was likely successful at the network level.
-      // Apps Script will handle the sheet writing.
-      // For more robust error handling, you'd need to configure Apps Script for CORS
-      // and return specific JSON responses (e.g., {status: 'success'} or {status: 'error', message: '...'})
+    setSubmissionStatus("success");
+    setFormMessage("Thank you! Your message has been sent.");
+    setFormData({ name: "", email: "", message: "" });
 
-      setSubmissionStatus("success");
-      setFormMessage(
-        "Thank you! Your message has been sent."
-      );
-      setFormData({ name: "", email: "", message: "" }); // Clear form
+    setTimeout(() => {
+      setSubmissionStatus("idle");
+      setFormMessage("");
+    }, 5000);
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    setSubmissionStatus("error");
+    setFormMessage("Something went wrong. Please try again.");
+    setTimeout(() => {
+      setSubmissionStatus("idle");
+      setFormMessage("");
+    }, 5000);
+  }
+};
 
-      setTimeout(() => {
-        // Reset after a few seconds
-        setSubmissionStatus("idle");
-        setFormMessage("");
-      }, 5000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setSubmissionStatus("error");
-      setFormMessage(
-        "Something went wrong. Please try again."
-      );
-      setTimeout(() => {
-        // Reset after a few seconds
-        setSubmissionStatus("idle");
-        setFormMessage("");
-      }, 5000);
-    }
-  };
 
   return (
     <section
