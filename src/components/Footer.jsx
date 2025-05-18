@@ -6,7 +6,7 @@ import { SiGithub } from "react-icons/si";
 
 export const Footer = () => {
   return (
-    <footer className="mt-24">
+    <footer>
       <div className="flex flex-col items-center justify-center py-4 space-y-4">
         <span className="flex space-x-8 md:space-x-6">
           <a href="https://github.com/CoolSrj06" target="_blank">

@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.7",
     "aos": "^2.3.4",
     "framer-motion": "^10.16.16",
     "react": "^18.2.0",
@@ -19,7 +20,8 @@
     "react-icons": "^4.12.0",
     "react-router-dom": "^6.20.1",
     "react-router-hash-link": "^2.4.3",
-    "react-type-animation": "^3.2.0"
+    "react-type-animation": "^3.2.0",
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
@@ -32,8 +34,7 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "gh-pages": "^6.2.0",
     "postcss": "^8.4.32",
-    "tailwindcss": "^3.3.6",
-    "vite": "^5.0.0"
+    "vite": "^6.3.5"
   },
   "homepage": "https://coolsrj06.github.io/Portfolio/"
 }

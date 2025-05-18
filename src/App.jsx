@@ -12,20 +12,19 @@ import { Certifications } from "./components/Certifications";
 
 function App() {
   return (
-    <BrowserRouter>
-      <main className="bg-[#161F26] text-[#C8CACD] h-full w-full font-body" >
-        <Navbar />
+    <section className="srj_portfolio_section bg-slate-900 text-[#C8CACD] h-full w-full font-body">
+      <Navbar />
+      <main>
         <HomeSection />
+        <About />
         <Skills />
         <ProjectsSection />
         <Certifications />
-        <About />
-        <SocialsSection />
         <Contact />
-        <Footer />
-        <ScrollToTop />
       </main>
-    </BrowserRouter>
+      <Footer />
+      {/* <ScrollToTop /> */}
+    </section>
   );
 }
 

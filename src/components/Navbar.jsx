@@ -11,41 +11,63 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-around h-20 w-full">
+    <nav className="flex items-center justify-between h-20 max-w-[90%] mx-auto w-full">
       {/* Desktop Section */}
       <div>
         <Link smooth to={"#home"}>
-          <img src={Logo} alt="logo" className="h-8 md:h-10 object-contain rounded-[20px]" />
+          <img
+            src={Logo}
+            alt="logo"
+            className="h-8 md:h-10 object-contain rounded-[20px]"
+          />
         </Link>
       </div>
       <ul className="hidden md:flex space-x-8 font-semibold">
         <li>
-          <Link smooth to="#home" className="hover:text-[#819096]">
+          <Link
+            smooth
+            to="#home"
+            className="hover:text-[#819096]">
             Home
           </Link>
         </li>
         <li>
-          <Link smooth to={"#skills"} className="hover:text-[#819096]">
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link smooth to={"#works"} className="hover:text-[#819096]">
-            Works
-          </Link>
-        </li>
-        <li>
-          <Link smooth to={"#certifications"} className="hover:text-[#819096]">
-            Certifications
-          </Link>
-        </li>
-        <li>
-          <Link smooth to={"#about"} className="hover:text-[#819096]">
+          <Link
+            smooth
+            to={"#about"}
+            className="hover:text-[#819096]">
             About Me
           </Link>
         </li>
         <li>
-          <Link smooth to={"#contact"} className="hover:text-[#819096]">
+          <Link
+            smooth
+            to={"#skills"}
+            className="hover:text-[#819096]">
+            Skills
+          </Link>
+        </li>
+        <li>
+          <Link
+            smooth
+            to={"#works"}
+            className="hover:text-[#819096]">
+            Works
+          </Link>
+        </li>
+        <li>
+          <Link
+            smooth
+            to={"#certifications"}
+            className="hover:text-[#819096]">
+            Certifications
+          </Link>
+        </li>
+        <li>
+          <Link
+            smooth
+            to={"#contact"}
+            className="hover:text-[#819096]">
             Contact me 🤙
           </Link>
         </li>
@@ -60,38 +82,54 @@ export const Navbar = () => {
         )}
       </div>
 
-        <ul
-  className={`absolute top-0 left-0 w-full h-screen bg-gray-800 flex flex-col items-center justify-center space-y-10 text-lg sm:text-xl opacity-90 z-10 text-white transform duration-700 ${
-    nav ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full"
-  }`}
->
+      <ul
+        className={`absolute top-0 left-0 w-full h-screen bg-gray-800 flex flex-col items-center justify-center space-y-10 text-lg sm:text-xl opacity-90 z-10 text-white transform duration-700 ${
+          nav
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-full"
+        }`}>
         <li>
-          <Link smooth to="#home" className="hover:text-[#819096]">
+          <Link
+            smooth
+            to="#home"
+            className="hover:text-[#819096]">
             Home
           </Link>
         </li>
-        <li>
-          <Link smooth to={"#skills"} className="hover:text-[#819096]">
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link smooth to={"#works"} className="hover:text-[#819096]">
-            Works
-          </Link>
-        </li>
-        <li>
-          <Link smooth to={"#certifications"} className="hover:text-[#819096]">
-            Certifications
-          </Link>
-        </li>
-        <li>
-          <Link smooth to={"#about"} className="hover:text-[#819096]">
+                <li>
+          <Link
+            smooth
+            to={"#about"}
+            className="hover:text-[#819096]">
             About Me
           </Link>
         </li>
         <li>
-          <Link smooth to={"#contact"} >
+          <Link
+            smooth
+            to={"#skills"}
+            className="hover:text-[#819096]">
+            Skills
+          </Link>
+        </li>
+        <li>
+          <Link
+            smooth
+            to={"#works"}
+            className="hover:text-[#819096]">
+            Works
+          </Link>
+        </li>
+        <li>
+          <Link
+            smooth
+            to={"#certifications"}
+            className="hover:text-[#819096]">
+            Certifications
+          </Link>
+        </li>
+        <li>
+          <Link smooth to={"#contact"}>
             Contact me 🤙
           </Link>
         </li>

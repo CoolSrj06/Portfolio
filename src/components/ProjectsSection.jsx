@@ -1,47 +1,46 @@
+// ProjectsSection.js
 import React, { useEffect, useState } from "react";
 import { PersonalProjects } from "./personalProjects";
 import { WorkExperience } from "./WorkExperience";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { AnimatedToggleButton } from "./animatedButton"; // Import the new component
 
 export const ProjectsSection = () => {
-  const [activeSection, setActiveSection] = useState("experience");
+  const [activeSection, setActiveSection] =
+    useState("experience");
 
   useEffect(() => {
-    Aos.init({ duration: 1000 });
-  });
+    Aos.init({ duration: 1000, once: true });
+  }, []);
 
   return (
-    <section className="pt-24" id="works">
-      <div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex gap-4 mb-8">
-            <button
-              className={`border-2 py-2 px-5 font-bold text-lg md:text-xl transition-all ${
-                activeSection === "experience"
-                  ? "border-[#C8CACD] bg-[#C8CACD] text-slate-900"
-                  : "border-[#C8CACD]"
-              }`}
+    <section className="pt-16 md:pt-24 " id="works">
+      <div className="container mx-auto px-6 md:px-12">
+        <div
+          className="flex flex-col justify-center items-center mb-10 md:mb-12"
+          data-aos="fade-down">
+          <div className="flex gap-3 md:gap-4 p-1">
+            <AnimatedToggleButton
+              text="Work Experience"
+              hoverText="View Experience" // Or keep it the same: "Work Experience"
               onClick={() => setActiveSection("experience")}
-              data-aos="fade-up"
-            >
-              Work Experience
-            </button>
-            <button
-              className={`border-2 py-2 px-5 font-bold text-lg md:text-xl transition-all ${
-                activeSection === "projects"
-                  ? "border-[#C8CACD] bg-[#C8CACD] text-slate-900"
-                  : "border-[#C8CACD]"
-              }`}
+              isActive={activeSection === "experience"}
+            />
+            <AnimatedToggleButton
+              text="Personal Projects"
+              hoverText="View Projects" // Or keep it the same: "Personal Projects"
               onClick={() => setActiveSection("projects")}
-              data-aos="fade-up"
-            >
-              Projects
-            </button>
+              isActive={activeSection === "projects"}
+            />
           </div>
         </div>
-        
-        {activeSection === "projects" ? <PersonalProjects /> : <WorkExperience />}
+
+        {activeSection === "experience" ? (
+          <WorkExperience />
+        ) : (
+          <PersonalProjects />
+        )}
       </div>
     </section>
   );

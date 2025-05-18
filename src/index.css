@@ -1,33 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-.socials-card {
-    @apply py-3 mt-6 bg-blue-100 text-[#0C0C0C] flex flex-col items-center rounded-md cursor-pointer space-y-1 shadow-md shadow-gray-200;
+.srj_portfolio_section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    margin: 0 auto;
 }
 
-.socials-icon {
-    @apply text-lg md:text-xl;
+nav {
+    grid-area: 1/1/1/5;
+    z-index: 1;
 }
 
-.skills-container {
-    @apply bg-blue-100 rounded-md flex flex-col justify-center items-center p-4 shadow-md shadow-gray-200 cursor-pointer h-[136px];
+main {
+    grid-area: 1/1/3/5;
 }
 
-.skills-text {
-    @apply text-[#0C0C0C] mt-2 font-semibold text-sm md:text-base;
-}
-
-.works-container {
-    @apply bg-blue-100 shadow shadow-[#C8CACD] flex flex-col justify-between rounded-md pb-4 cursor-pointer;
-}
-
-.works-pill {
-    @apply bg-blue-200 text-blue-800 border border-blue-400 px-2 py-1 rounded text-sm md:text-base;
-}
-
-.form-input {
-    @apply bg-white border text-[#0C0C0C] rounded p-1 md:p-2 outline-none;
+footer {
+    grid-area: 3/1/3/5;
 }
