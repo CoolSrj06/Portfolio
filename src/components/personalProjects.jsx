@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import UnitStorage from "../assets/UnitStorage.png";
 import CodeWhispers from "../assets/CodeWhispers.png";
+import CodeGalaxy from "../assets/Code-Galaxy.png";
 import BasicChatApp from "../assets/Basic Chat Application.png";
 import YouTubeTimeCalculator from "../assets/YoutubeTimeCalculator.png";
 import { FaGithub, FaLink } from "react-icons/fa6";
@@ -10,6 +11,27 @@ import "aos/dist/aos.css";
 
 // Data array for personal projects
 const projectsData = [
+  {
+    id: "codegalaxy",
+    image: CodeGalaxy,
+    title: "Code-Galaxy",
+    description:
+      "A Full-stack project, it is the updated version of Code-Whispers. Unilike Code-Whispers, it's frontend is build on ReactJs. Where Code-Whisper's completely used to run of a single server, Code Galaxy runs on two servers, a frontend server and a Backend Server. More over Google authentication is also added to the project for smooth login.",
+    technologies: [
+      "ReactJs",
+      "Tailwind CSS",
+      "ExpressJs",
+      "NodeJs",
+      "MongoDB",
+      "Google Authentication",
+      "JavaScript",
+    ],
+    githubLink:
+      "https://github.com/CoolSrj06/Code-Galaxy.git",
+    liveLink:
+      "https://code-galaxy-n5r9.onrender.com/",
+    aosDelay: "0",
+  },
   {
     id: "codewhispers",
     image: CodeWhispers,
@@ -97,9 +119,7 @@ const ProjectCard = ({ project }) => {
           {project.title}
         </h3>
         <p className="text-slate-300 text-sm md:text-base mb-4 leading-relaxed flex-grow">
-          {project.description.length > 150 // Truncate long descriptions
-            ? `${project.description.substring(0, 150)}...`
-            : project.description}
+          {project.description }
         </p>
 
         <div className="mb-5">
