@@ -132,7 +132,7 @@ export const About = () => {
             </div>
             <div className="mt-6 md:mt-8 flex justify-center md:justify-start">
               <motion.a
-                href="https://github.com/CoolSrj06/Resume"
+                href="https://coolsrj06.github.io/Resume/myresume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center space-x-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-amber-400"
