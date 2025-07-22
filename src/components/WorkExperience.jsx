@@ -34,7 +34,7 @@ const experiences = [
       "Ubuntu",
       "Hostinger VPS",
     ],
-    type: "Remote Internship",
+    type: "Freelance",
     aosDelay: "0", // Base delay for the first card
   },
   // Add more experience objects here
@@ -75,30 +75,12 @@ export const WorkExperience = () => {
               data-aos="fade-up"
               data-aos-delay={exp.aosDelay}>
               <div className="md:flex">
-                {/* Image Section */}
                 <div className="md:w-1/2 lg:w-6/12 flex-shrink-0">
-                  {/* <figure className="relative h-full">
-                    <img
-                      src={exp.image}
-                      alt={`${exp.company} showcase`}
-                      className="w-full h-full object-cover" // Ensure image covers the area
-                    />
-                    <figcaption className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 p-3 text-sm">
-                      <Link
-                        to={exp.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center text-sky-300 hover:text-sky-200 transition-colors">
-                        <FaLink className="mr-2" />
-                        {exp.websiteDisplay}
-                      </Link>
-                    </figcaption>
-                  </figure> */}
                   <video
                     autoPlay
                     muted
                     loop
-                    className="w-full h-full object-cover">
+                    className="object-cover mt-13">
                     <source
                       src={dataverse_video}
                       type="video/mp4"
@@ -152,6 +134,17 @@ export const WorkExperience = () => {
                       )}
                     </div>
                   </div>
+
+                  <div className="mt-auto pt-4 border-t border-slate-700 flex items-center justify-end space-x-4">
+                    <Link
+                      to={exp.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-400 hover:text-sky-400 transition-colors">
+                      {exp.websiteDisplay}
+                    </Link>                   
+                  </div>
+                  
                 </div>
               </div>
             </div>
