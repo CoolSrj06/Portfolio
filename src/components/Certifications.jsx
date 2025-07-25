@@ -47,7 +47,7 @@ const certificatesData = [
     id: 7,
     title: "Python Essentials",
     image: Python,
-  },
+  }
 ];
 
 export const Certifications = () => {

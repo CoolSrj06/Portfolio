@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import UnitStorage from "../assets/UnitStorage.png";
-import CodeWhispers from "../assets/CodeWhispers.png";
+import CodeWhispers from "../assets/devOps project 1.png";
 import CodeGalaxy from "../assets/Code-Galaxy.png";
 import BasicChatApp from "../assets/Basic Chat Application.png";
 import YouTubeTimeCalculator from "../assets/YoutubeTimeCalculator.png";
@@ -37,13 +37,18 @@ const projectsData = [
     image: CodeWhispers,
     title: "Code-Whispers",
     description:
-      "A Full-stack project aims to solve doubts of learners and developers on any topic, where the users present on the platform help them to solve their doubts, thus creating a helpful environment for everyone. Moreover, it provides a common platform linking different websites and providing them with software links and various languages books links.",
+      "A Full-stack project aims to solve doubts of learners and developers on any topic, where the users present on the platform help them to solve their doubts, thus creating a helpful environment for everyone. Moreover, it is deployed via following Devops principals, tools like AWS EC2, Ubuntu, Docker and Jenkins along with integration of Github has made the website a self manageable project.",
     technologies: [
       "HTML",
       "CSS",
       "JavaScript",
       "MongoDB",
       "NodeJs",
+      "AWS EC2",
+      "Ubuntu",
+      "Docker",
+      "Jenkins",
+      "GitHub Webhooks"
     ],
     githubLink:
       "https://github.com/CoolSrj06/code-whispers.git",

@@ -18,7 +18,7 @@ export const Footer = () => {
           <a href="mailto:srijanmaurya6602@gamil.com" target="_blank">
             <MdOutlineMailOutline className="socials-icon" />
           </a>
-          <a href="https://www.linkedin.com/in/srijan-maurya100258/" target="_blank">
+          <a href="https://www.linkedin.com/in/coolsrj06/" target="_blank">
             <FiLinkedin className="socials-icon" />
           </a>
         </span>
